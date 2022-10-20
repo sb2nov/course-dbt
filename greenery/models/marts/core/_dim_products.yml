@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: "Product dimension table"
+    columns:
+      - name: product_id
+        description: "Product UUID"
+        tests:
+          - unique
+          - not_null
+
+      - name: name
+        description: "Name of the product"
+        tests:
+          - not_null
+
+      - name: price
+        description: "Product price"
+        tests:
+          - not_null
+
+      - name: inventory
+        description: "Amount of the inventory of a specific product"
+        tests:
+          - positive_values
+

@@ -1,0 +1,87 @@
+version: 2
+
+models:
+  - name: user_order_facts
+    description: "Order facts per user"
+    columns:
+      - name: user_id
+        description: "User ID, recurrent"
+        tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        description: "User's first name"
+        tests:
+          - not_null
+
+      - name: last_name
+        description: "User's last name"
+        tests:
+          - not_null
+
+      - name: email
+        description: "User's email"
+        tests:
+          - not_null
+
+      - name: phone_number
+        description: "User's phone number"
+        tests:
+          - not_null
+
+      - name: user_registration_utc
+        description: "Registration time"
+        tests:
+          - not_null
+
+      - name: user_updated_utc
+        description: "User info updated time"
+        tests:
+          - not_null
+
+      - name: order_count
+        description: "Count of all orders"
+        tests:
+          - not_null
+
+      - name: spend_lifetime
+        description: "Lifetime spend"
+        tests:
+          - not_null
+          - positive_values
+
+      - name: units_lifetime
+        description: "Lifetime units bought"
+        tests:
+          - not_null
+
+      - name: first_order
+        description: "First user order"
+
+      - name: latest_order
+        description: "Last user order"
+
+      - name: first_session
+        description: "First session"
+
+      - name: last_session
+        description: "Last session"
+
+      - name: sessions
+        description: "No of sessions"
+
+      - name: total_session_duration
+        description: "Total session duration"
+
+      - name: page_views
+        description: "Count of page views events fired"
+
+      - name: add_to_cart
+        description: "Count of added to cart events fired"
+
+      - name: checkouts
+        description: "Count of checkout events fired"
+          
+      - name: package_shipped
+        description: "Count of package shipped events fired"

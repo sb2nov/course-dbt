@@ -1,0 +1,70 @@
+version: 2
+
+models:
+  - name: fact_orders
+    description: "Order facts table"
+    columns:
+      - name: order_id
+        description: "Order ID"
+        tests:
+          - unique
+          - not_null
+
+      - name: user_id
+        description: "User ID"
+        tests:
+          - not_null
+
+      - name: status
+        description: "Promo status (active/inactive)"
+        tests:
+          - not_null
+
+      - name: address_id
+        description: "User's address ID"
+
+      - name: created_at
+        description: "Timestamp when the order was created"
+        tests:
+          - not_null
+
+      - name: order_cost
+        description: "Cost of the order in dollars"
+        tests:
+          - positive_values
+          - not_null
+
+      - name: shipping_cost
+        description: "Cost of shipping in dollars"
+        tests:
+          - not_null
+
+      - name: promo_discount
+        description: "Discount in dollars"
+
+      - name: order_total
+        description: "Total order cost (inc shipping costs)"
+        tests:
+          - positive_values
+          - not_null
+
+      - name: shipping_service
+        description: "Company that was used for shipping"
+
+      - name: estimated_delivery_at
+        description: "Estimated delivery date"
+
+      - name: delivered_at
+        description: "Actual delivery timestamp"
+
+      - name: delivery_delay
+        description: "Delay time in comparison to estimated delivery time"
+
+      - name: product_lines
+        description: "Count of different products ordered"
+
+      - name: order_units
+        description: "How many units were ordered"
+        tests:
+          - not_null
+          - positive_values

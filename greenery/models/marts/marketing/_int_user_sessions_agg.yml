@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: int_user_sessions_agg
+    description: "All session events aggregated per user"
+    columns:
+      - name: user_id
+        description: "User ID, recurrent"
+        tests:
+          - unique
+          - not_null
+
+      - name: first_session
+        description: "First session start"
+        tests:
+          - not_null
+
+      - name: last_session
+        description: "Last session start"
+        tests:
+          - not_null
+
+      - name: sessions
+        description: "Amount of sessions"
+        tests:
+          - not_null
+
+      - name: total_session_duration
+        description: ""
+        tests:
+          - not_null
+
+      - name: page_views
+        description: "Amount of all page views"
+        tests:
+          - not_null
+          
+      - name: add_to_cart
+        description: "Amount of all add to cart events"
+
+      - name: checkouts
+        description: "Amount of all checkouts"
+
+      - name: package_shipped
+        description: "Amount of all package shipped events"

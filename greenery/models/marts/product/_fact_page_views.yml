@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: fact_page_views
+    description: "Aggregated session-granular information per user"
+    columns:
+      - name: session_id
+        description: "Browsing session ID, recurrent"
+        tests: 
+          - not_null
+
+      - name: user_id
+        description: "User UUID"
+        tests: 
+          - not_null
+
+      - name: first_name
+        description: "User's first name"
+
+      - name: last_name
+        description: "User's last name"
+
+      - name: email
+        description: "User's email"
+
+      - name: page_views
+        description: "How many page views occured during user's session"
+        tests:
+          - positive_values
+
+      - name: add_to_cart
+        description: "Count of add to cart events"
+
+      - name: checkouts
+        description: "Count of checkouts within a session"
+
+      - name: package_shipped
+        description: "Count of packages shipped"
+
+      - name: first_session_event
+        description: "First event of a session"
+
+      - name: last_session_event
+        description: "Last event of a session"
+
+      - name: session_length_minutes
+        description: "Session length in minutes"
+        tests:
+          - not_null
+

@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: src_greenery
+    schema: public
+    database: raw
+    tables:
+      - name: users
+        description: Contains demographic information about each users
+      - name: addresses
+      - name: events
+      - name: orders
+      - name: order_items
+      - name: products
+      - name: promos

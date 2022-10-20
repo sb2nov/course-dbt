@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: int_session_events_agg
+    description: "Aggregated session events per user's session"
+    columns:
+      - name: user_id
+        description: "User ID, recurrent"
+
+      - name: session_id
+        description: "Browsing session ID, recurrent"
+
+      - name: session_start
+        description: "When session has started"
+
+      - name: session_end
+        description: "when session has ended"
+
+      - name: session_duration
+        description: "Session duration"
+
+      - name: total_events
+        description: "Count of events during session"
+
+      - name: total_products
+        description: "Count of products added to card"
+
+      - name: add_to_cart
+        description: "Count of add to cart events"
+
+      - name: checkouts
+        description: "Count of checkouts"
+
+      - name: package_shipped
+        description: "Count of packages shipped"
+
+      - name: page_views
+        description: "Count of page views"
